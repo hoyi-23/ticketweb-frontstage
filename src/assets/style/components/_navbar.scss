@@ -1,0 +1,30 @@
+.nav-item{
+    transition: .5s ease-in-out;
+    overflow: hidden;
+    position: relative;
+    .nav-link{
+        margin: 0rem 1rem;
+    }
+    span{
+        position: absolute;
+        transition: .5s ease-in-out;
+        top: -100%;
+    }
+    p{
+        transition: .5s ease-in-out;
+        margin-bottom: 0rem;
+    }
+}
+
+.nav-item:hover{
+    background-color: $primary;
+    border-radius: 10px;
+    span{
+        color: #fff;
+        transform: translateY(200%)
+    }
+    p{
+        color: #fff;
+        transform: translateY(200%)
+    }
+}

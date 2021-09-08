@@ -1,3 +1,12 @@
 @import "../../../node_modules/bootstrap/scss/functions";
 @import "../style/utils/variable";
-@import "../../../node_modules/bootstrap/scss/bootstrap.scss"
+@import "../../../node_modules/bootstrap/scss/bootstrap.scss";
+
+@import "../style/base/base";
+@import "../style/base/reset";
+
+
+//components
+@import "../style/components/navbar";
+@import "../style/components/button";
+@import "../style/components/card";

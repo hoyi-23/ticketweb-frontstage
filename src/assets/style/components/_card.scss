@@ -1,0 +1,14 @@
+.eventCard{
+    height: 400px;
+}
+.img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+    filter: grayscale(40%);
+}
+.card{
+    height: 100%;
+    background-color: transparent;
+}
