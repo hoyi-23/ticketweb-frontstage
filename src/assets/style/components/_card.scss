@@ -1,14 +1,43 @@
 .eventCard{
-    height: 400px;
+    min-height: 400px;
 }
 .img{
     width: 100%;
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    filter: grayscale(40%);
+    filter: grayscale(30%);
 }
-.card{
+.wrapper{
     height: 100%;
     background-color: transparent;
+    box-shadow: 0 19px 38px rgba(#000, 0.3);
+    transition: .2s ease-in-out;
+    &:hover {
+        border: solid #630834 10px;
+        .img{
+            filter: grayscale(20%);
+        }
+        .data {
+          transform: translateY(0);
+        }
+    }
+}
+.data{
+    bottom: 0;
+    transition: transform 0.3s;
+    transform: translateY(calc(110px + 3em));
+    background-color: rgba(0, 0, 0, 0.329);
+    .content {
+      z-index: 1;
+    }
+}
+.eventDescript{
+    height: 110px;
+}
+
+.date,.eventCate,.eventTitle{
+    color: #fff;
+    text-shadow: 0.1em 0.1em #333
+
 }

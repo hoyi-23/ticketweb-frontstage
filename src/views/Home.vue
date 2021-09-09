@@ -2,9 +2,11 @@
     <div class="home">
         <!--banner-->
          <Carousel :recentEventArray="recentEventArray"></Carousel>
+        <!--category Event-->
+        <EventCategory></EventCategory>
         <!--Recent Event-->
         <div class="container">
-            <h2 class="fs-1 fw-bold mt-5">近期活動</h2>
+            <h2 class="fs-2 fw-bold mt-5 mb-4 text-center">【 近期活動 】</h2>
             <ul class="row p-0 g-4">
                 <EventCard 
                     v-for="item in recentEventArray.slice(0,6)" 
@@ -19,13 +21,15 @@
 <script>
 import Carousel from '../components/Carousel.vue'
 import EventCard from '../components/EventCard.vue'
+import EventCategory from '../components/EventCategory.vue'
 import {computed} from 'vue'
 import {useStore} from 'vuex'
 export default {
     name: 'Home',
     components: {
          Carousel,
-         EventCard
+         EventCard,
+         EventCategory
     },
     setup(){
         

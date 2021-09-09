@@ -1,5 +1,11 @@
 <template>
   <div class="app">
+    <div class="alert alert-secondary alert-dismissible fade show mb-0 py-1 px-2 d-flex align-items-center justify-content-between" role="alert">
+      <p class="m-0">還不是會員嗎? 馬上加入會員，得到第一手資料
+        <a href="#" class="btn-primary p-1 rounded">點我註冊</a>
+      </p>
+      <button type="button" class="btn-close p-0 position-relative" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container-fluid d-flex justify-content-between">
         <!--index(Home)-->
@@ -19,14 +25,7 @@
             <li class="nav-item">
               <router-link to="/search" class="nav-link d-flex flex-column align-items-center"> 
                 <span class="material-icons-outlined fs-4">search</span>
-                <p class="fs-6">搜尋活動</p>
-              </router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/category" class="nav-link d-flex flex-column align-items-center">
-                <span class="material-icons-outlined fs-4">category</span>
-                <p class="fs-6">全部分類</p>
-                
+                <p class="fs-6">探索活動</p>
               </router-link>
             </li>
             <li class="nav-item">
@@ -53,8 +52,13 @@
       <OnLoad></OnLoad>
     </div>
 
-    <div class="footer">
-      這是Footer
+    <div class="footer mt-5">
+      <div class="footer__banner">
+        <div class="footer__banner__content">
+
+        </div>
+      </div>
+
     </div>
 
   </div>
