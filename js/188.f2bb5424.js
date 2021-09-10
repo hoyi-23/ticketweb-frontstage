@@ -1,2 +1,0 @@
-"use strict";(self["webpackChunkticketweb_frontstage"]=self["webpackChunkticketweb_frontstage"]||[]).push([[188],{188:function(e,t,n){n.r(t),n.d(t,{default:function(){return u}});var r=n(252);const a={class:"purchase"};function c(e,t,n,c,s,u){return(0,r.wg)(),(0,r.iD)("div",a," 我的票券 ")}var s={name:"Purchase"};s.render=c;var u=s}}]);
-//# sourceMappingURL=188.f2bb5424.js.map

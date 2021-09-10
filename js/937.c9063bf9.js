@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkticketweb_frontstage"]=self["webpackChunkticketweb_frontstage"]||[]).push([[937],{937:function(t,e,n){n.r(e),n.d(e,{default:function(){return u}});var r=n(252);const a={class:"cart"};function c(t,e,n,c,s,u){return(0,r.wg)(),(0,r.iD)("div",a," 購物車 購物流程 ")}var s={name:"Cart"};s.render=c;var u=s}}]);
+//# sourceMappingURL=937.c9063bf9.js.map
