@@ -14,7 +14,7 @@
                     :Event="item"></EventCard>
             </ul>
         </div>
-        
+        <Footer></Footer>
     </div>
 </template>
 
@@ -22,6 +22,7 @@
 import Carousel from '../components/Carousel.vue'
 import EventCard from '../components/EventCard.vue'
 import EventCategory from '../components/EventCategory.vue'
+import Footer from '../components/Footer.vue'
 import {computed} from 'vue'
 import {useStore} from 'vuex'
 export default {
@@ -29,7 +30,8 @@ export default {
     components: {
          Carousel,
          EventCard,
-         EventCategory
+         EventCategory,
+         Footer
     },
     setup(){
         

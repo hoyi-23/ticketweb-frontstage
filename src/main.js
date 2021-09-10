@@ -20,4 +20,13 @@ const firebaseConfig = {
 
 firebase.initializeApp(firebaseConfig)
 
-createApp(App).use(store).use(router).mount('#app')
+//SVG
+const requireAll = requireContext => requireContext.keys().map(requireContext)
+const req = require.context("@/assets/icon", true, /\.svg$/)
+requireAll(req)
+
+import SvgIcon from "@/components/SvgIcon"
+
+//Vue.component("icon", SvgIcon)
+
+createApp(App).component("icon", SvgIcon).use(store).use(router).mount('#app')

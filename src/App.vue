@@ -51,16 +51,6 @@
     <div v-else>
       <OnLoad></OnLoad>
     </div>
-
-    <div class="footer mt-5">
-      <div class="footer__banner">
-        <div class="footer__banner__content">
-
-        </div>
-      </div>
-
-    </div>
-
   </div>
   
 </template>
@@ -93,5 +83,4 @@ export default({
 
 
 <style lang="scss" src="./assets/style/all.scss">
-
 </style>
