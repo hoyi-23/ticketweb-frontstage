@@ -29,16 +29,10 @@
               </router-link>
             </li>
             <li class="nav-item">
-              <router-link to="/purchase" class="nav-link d-flex flex-column align-items-center">
+              <router-link to="/admin" class="nav-link d-flex flex-column align-items-center">
                 <span class="material-icons-outlined fs-4">confirmation_number</span>
                 <p class="fs-6">我的票券</p>
                 
-              </router-link>
-            </li>
-            <li class="nav-item">
-              <router-link to="/cart" class="nav-link d-flex flex-column align-items-center">
-                <span class="material-icons-outlined fs-4">shopping_cart</span>
-                <p class="fs-6">購物車</p>
               </router-link>
             </li>
           </ul>

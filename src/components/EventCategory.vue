@@ -1,42 +1,47 @@
 <template>
     <div class="eventVategory container">
-        <ul class="row">
-            <li class="col col-lg-3">
+        <ul class="row align-items-center mb-0">
+            <li class="col-12 col-lg-3 fs-4 text-center border border-1">
                 依興趣找活動
-            </li>
-            <li class="col-4 col-lg-1">
-                <router-link>
+            </li> 
+            <li class="col-4 col-lg-1 border border-1">
+                <router-link to="/search" class="d-block py-lg-4 text-center py-2">
                     <icon iconName="artIcon" /> 
-                    <!--<img src="../assets/image/artIcon.svg" alt="藝術類展演" class="eventCategoryIcon">-->
+                    <span>藝術</span>
                 </router-link>
             </li>
-            <li class="col-4 col-lg-1">
-                <router-link>
-                    <!--<img src="../assets/image/danceIcon.svg" alt="舞蹈類展演" class="eventCategoryIcon">-->
+            <li class="col-4 col-lg-1 border border-1">
+                <router-link to="/search" class="d-block py-lg-4 text-center py-2">
+                    <icon iconName="danceIcon" />
+                    <span>舞蹈</span>
                 </router-link>
             </li>
-            <li class="col-4 col-lg-1">
-                <router-link>
-                    <!--<img src="../assets/image/designIcon.svg" alt="設計類展演"  class="eventCategoryIcon">-->
+            <li class="col-4 col-lg-1 border border-1">
+                <router-link to="/search" class="d-block py-lg-4 text-center py-2">
+                    <icon iconName="designIcon" />
+                    <span>設計</span>
                 </router-link>
             </li>
-            <li class="col-4 col-lg-1">
-                <router-link>
-                    <!--<img src="../assets/image/familyIcon.svg" alt="親子類展演"  class="eventCategoryIcon">-->
+            <li class="col-4 col-lg-1 border border-1">
+                <router-link to="/search" class="d-block py-lg-4 text-center py-2">
+                    <icon iconName="familyIcon" /> 
+                    <span>親子</span>
                 </router-link>
             </li>
-            <li class="col-4 col-lg-1">
-                <router-link>
-                    <!--<img src="../assets/image/movieIcon.svg" alt="影劇類展演"  class="eventCategoryIcon">-->
+            <li class="col-4 col-lg-1 border border-1">
+                <router-link to="/search" class="d-block py-lg-4 text-center py-2">
+                    <icon iconName="movieIcon" />
+                    <span>影劇</span>
                 </router-link>
             </li>
-            <li class="col-4 col-lg-1">
-                <router-link>
-                    <!--<img src="../assets/image/travelIcon.svg" alt="旅遊類展演"  class="eventCategoryIcon">-->
+            <li class="col-4 col-lg-1 border border-1">
+                <router-link to="/search" class="d-block py-lg-4 text-center py-2">
+                    <icon iconName="travelIcon" />
+                    <span>旅遊</span>
                 </router-link>
             </li>
-            <li class="col col-lg-3">
-                <router-link to="/search">更多分類</router-link>
+            <li class="col-12 col-lg-3 border border-1">
+                <router-link to="/search" class="fs-4 text-center">更多分類</router-link>
             </li>
         </ul>
     </div>

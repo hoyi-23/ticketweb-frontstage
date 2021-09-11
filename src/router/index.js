@@ -12,14 +12,9 @@ const routes = [
     component: () => import('../views/Search.vue')
   },
   {
-    path: '/purchase',
-    name: 'Purchase',
-    component: () => import('../views/Purchase.vue')
-  },
-  {
-    path: '/cart',
-    name: 'Cart',
-    component: () => import('../views/Cart.vue')
+    path: '/admin',
+    name: 'Admin',
+    component: () => import('../views/Admin.vue')
   }
 
 ]

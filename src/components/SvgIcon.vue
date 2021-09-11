@@ -18,9 +18,13 @@ export default {
 
 <style lang="scss" scoped>
     .svg-icon{
-        width: 1rem;
-        height: 1rem;
+        width: 2rem;
+        height: 2rem;
         fill: currentColor !important;
         overflow: hidden;
+        @media (min-width: 1023px){
+            width: 4rem;
+            height: 4rem;
+        }
     }
 </style>
