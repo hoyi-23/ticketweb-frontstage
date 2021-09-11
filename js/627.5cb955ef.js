@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkticketweb_frontstage"]=self["webpackChunkticketweb_frontstage"]||[]).push([[627],{627:function(e,n,t){t.r(n),t.d(n,{default:function(){return s}});var r=t(252);const a={class:"admin"};function c(e,n,t,c,i,s){return(0,r.wg)(),(0,r.iD)("div",a," 需驗證登入 我的票券 會員專區 ")}var i={name:"Admin"};i.render=c;var s=i}}]);
+//# sourceMappingURL=627.5cb955ef.js.map
