@@ -1,47 +1,47 @@
 <template>
     <div class="eventVategory container">
-        <ul class="row align-items-center mb-0">
-            <li class="col-12 col-lg-3 fs-4 text-center border border-1">
+        <ul class="row align-items-center mb-0 border border-1">
+            <li class="col-12 col-lg-3 fs-4 text-center py-3 py-lg-0">
                 依興趣找活動
-            </li> 
+            </li>
             <li class="col-4 col-lg-1 border border-1">
-                <router-link to="/search" class="d-block py-lg-4 text-center py-2">
+                <router-link to="/search" class="d-block py-lg-4 text-center py-2 d-flex flex-column align-items-center">
                     <icon iconName="artIcon" /> 
                     <span>藝術</span>
                 </router-link>
             </li>
             <li class="col-4 col-lg-1 border border-1">
-                <router-link to="/search" class="d-block py-lg-4 text-center py-2">
-                    <icon iconName="danceIcon" />
+                <router-link to="/search" class="d-block py-lg-4 text-center py-2 d-flex flex-column align-items-center">
+                    <icon iconName="danceIcon" class="danceIcon" />
                     <span>舞蹈</span>
                 </router-link>
             </li>
             <li class="col-4 col-lg-1 border border-1">
-                <router-link to="/search" class="d-block py-lg-4 text-center py-2">
-                    <icon iconName="designIcon" />
+                <router-link to="/search" class="d-block py-lg-4 text-center py-2 d-flex flex-column align-items-center">
+                    <icon iconName="test"/>
                     <span>設計</span>
                 </router-link>
             </li>
             <li class="col-4 col-lg-1 border border-1">
-                <router-link to="/search" class="d-block py-lg-4 text-center py-2">
+                <router-link to="/search" class="d-block py-lg-4 text-center py-2 d-flex flex-column align-items-center">
                     <icon iconName="familyIcon" /> 
                     <span>親子</span>
                 </router-link>
             </li>
             <li class="col-4 col-lg-1 border border-1">
-                <router-link to="/search" class="d-block py-lg-4 text-center py-2">
+                <router-link to="/search" class="d-block py-lg-4 text-center py-2 d-flex flex-column align-items-center">
                     <icon iconName="movieIcon" />
                     <span>影劇</span>
                 </router-link>
             </li>
             <li class="col-4 col-lg-1 border border-1">
-                <router-link to="/search" class="d-block py-lg-4 text-center py-2">
+                <router-link to="/search" class="d-block py-lg-4 text-center py-2 d-flex flex-column align-items-center">
                     <icon iconName="travelIcon" />
                     <span>旅遊</span>
                 </router-link>
             </li>
-            <li class="col-12 col-lg-3 border border-1">
-                <router-link to="/search" class="fs-4 text-center">更多分類</router-link>
+            <li class="col-12 col-lg-3 text-center py-3 py-lg-0">
+                <router-link to="/search" class="fs-4">更多分類</router-link>
             </li>
         </ul>
     </div>
@@ -53,9 +53,19 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
     .eventCategoryIcon{
         width: 100%;
         height: 40px;
     }
+    span{
+        color: #666;
+        margin-top: 2rem;
+        &:hover{
+            color: #000;
+            margin-top: 1.5rem;
+        }
+    }
+
+    
 </style>

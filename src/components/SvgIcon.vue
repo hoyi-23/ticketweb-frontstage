@@ -20,11 +20,12 @@ export default {
     .svg-icon{
         width: 2rem;
         height: 2rem;
-        fill: currentColor !important;
         overflow: hidden;
+        transition: all .15s ease-in-out;
         @media (min-width: 1023px){
             width: 4rem;
             height: 4rem;
         }
     }
+    
 </style>
