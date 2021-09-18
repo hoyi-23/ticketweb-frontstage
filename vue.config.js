@@ -4,9 +4,17 @@ function resolve(dir){
 }
 module.exports = {
     // publicPath 為 project-name，根目錄地址為上傳的網域
-    publicPath: '/ticketweb-frontstage/',
-
+    publicPath: process.env.NODE_ENV === 'production' ? '/ticketweb-frontstage/' : '/' ,
+    //輸出
+    outputDir: "dist",
+    assetsDir: "static",
     chainWebpack: config => {
+        config.module
+          .rule("image")
+          .test(/\.(png|jpe?g|gif|webp)(\?.*)?$/)
+          .use('file-loader')
+          .loader('file-loader')
+          .options({name: "[name]"})
         // 先刪除預設的svg配置
         config.module.rules.delete("svg")
         // 新增 svg-sprite-loader 設定
@@ -23,5 +31,6 @@ module.exports = {
         config.module
           .rule("images")
           .exclude.add(resolve("src/assets/icon"))
-      }
+      },
+      
 };

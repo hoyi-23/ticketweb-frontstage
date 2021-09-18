@@ -12,9 +12,24 @@ const routes = [
     component: () => import('../views/Search.vue')
   },
   {
+    path: '/auth',
+    name: 'Auth',
+    component: ()=>('../views/Authentication.vue')
+  },
+  {
     path: '/admin',
     name: 'Admin',
     component: () => import('../views/Admin.vue')
+  },
+  {
+    path: '/checkout',
+    name: 'CheckOut',
+    component: () => import('../views/CheckOut.vue')
+  },
+  {
+    path: '/eventdetail/:eventId',
+    name: 'EventDetail',
+    component: () => import('../views/EventDetail.vue')
   }
 
 ]

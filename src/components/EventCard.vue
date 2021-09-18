@@ -23,7 +23,7 @@
                 <!--介紹-->
                 <p class="eventDescript text-white">{{Event.eventDescription}}</p>
                 <!--Link to specific page-->
-                <a href="#" class="btn-primary py-1 px-2 rounded">Read more</a>
+                <router-link :to="`/eventdetail/${Event.eventId}`" class="btn-primary py-1 px-2 rounded">Read more</router-link>
             </div>
         </div>
     </div>

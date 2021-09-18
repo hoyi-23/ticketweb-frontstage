@@ -1,7 +1,7 @@
 <template>
     <div class="eventVategory container">
         <ul class="row align-items-center mb-0 border border-1">
-            <li class="col-12 col-lg-3 fs-4 text-center py-3 py-lg-0">
+            <li class="col-12 col-lg-3 fs-5 text-center py-3 py-lg-0">
                 依興趣找活動
             </li>
             <li class="col-4 col-lg-1 border border-1">
@@ -18,7 +18,7 @@
             </li>
             <li class="col-4 col-lg-1 border border-1">
                 <router-link to="/search" class="d-block py-lg-4 text-center py-2 d-flex flex-column align-items-center">
-                    <icon iconName="test"/>
+                    <icon iconName="designSvgIcon"/>
                     <span>設計</span>
                 </router-link>
             </li>
@@ -41,7 +41,7 @@
                 </router-link>
             </li>
             <li class="col-12 col-lg-3 text-center py-3 py-lg-0">
-                <router-link to="/search" class="fs-4">更多分類</router-link>
+                <router-link to="/search" class="fs-5">更多分類</router-link>
             </li>
         </ul>
     </div>
@@ -60,12 +60,22 @@ export default {
     }
     span{
         color: #666;
-        margin-top: 2rem;
-        &:hover{
-            color: #000;
+        margin-top: 1rem;
+        @media (min-width: 1023px){
             margin-top: 1.5rem;
         }
     }
-
+    
+    li:hover{
+        span{
+            color: #000;
+            margin-top: .5rem;
+            margin-bottom: .5rem;
+            @media (min-width: 1023px){
+            margin-top: 1rem;
+            margin-bottom: .5rem;
+            }
+        }
+    }
     
 </style>

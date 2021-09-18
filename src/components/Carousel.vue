@@ -1,13 +1,8 @@
 <template>
     <div class="carousel">
-        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
+        <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
-                <div class="carousel-item position-relative"  
+                <div class="carousel-item position-relative"   data-bs-interval="5000"
                     v-for="(item,index) in recentEventArray.slice(0,3)" 
                     :key="item.eventId" :recentEventArray="recentEventArray" :class="{active: index === 0}">
                     <img :src="item.eventPhotos" class="d-block w-100 banner__img" :alt="item.eventTitle">
@@ -19,18 +14,17 @@
                             {{item.eventEndDate}}
                         </p>
                         <div class="banner__btn d-flex mt-5">
-                            <button class="btn btn-transparent">活動細節</button>
-                            <button class="btn btn-secondary ms-2">購買票券</button>
+                            <router-link :to="`/eventdetail/${item.eventId}`" class="btn btn-transparent">活動細節</router-link>
+                            <router-link :to="`/eventdetail/${item.eventId}`" class="btn btn-secondary ms-2">購買票券</router-link>
                         </div>
                     </div> 
                 </div>
-                
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
@@ -50,7 +44,7 @@ export default {
 <style lang="scss" scoped>
     .banner__img{
         width: auto;
-        height: calc(80vh - 56px);
+        height: calc(60vh - 56px);
         object-fit: cover;
         filter: grayscale(40%);
     }

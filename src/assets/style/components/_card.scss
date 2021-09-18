@@ -28,6 +28,7 @@
     transition: transform 0.3s;
     transform: translateY(calc(110px + 3em));
     background-color: rgba(0, 0, 0, 0.329);
+    width: 100%;
     .content {
       z-index: 1;
     }

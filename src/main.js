@@ -27,6 +27,7 @@ requireAll(req)
 
 import SvgIcon from "@/components/SvgIcon"
 
-//Vue.component("icon", SvgIcon)
+//swiper
+
 
 createApp(App).component("icon", SvgIcon).use(store).use(router).mount('#app')

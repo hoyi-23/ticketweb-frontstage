@@ -1,5 +1,5 @@
 <template>
-    <div class="home">
+    <div class="home position-relative">
         <!--banner-->
          <Carousel :recentEventArray="recentEventArray"></Carousel>
         <!--category Event-->
@@ -14,11 +14,19 @@
                     :Event="item"></EventCard>
             </ul>
         </div>
+
+        <!--cart-->
+        <CartOpenIcon></CartOpenIcon>
+        <!--Footer--> 
         <Footer></Footer>
+        <!--cart-->
+        <CartContent />
     </div>
 </template>
 
 <script>
+import CartOpenIcon from '../components/CartOpenIcon.vue'
+import CartContent from '../components/CartContent.vue'
 import Carousel from '../components/Carousel.vue'
 import EventCard from '../components/EventCard.vue'
 import EventCategory from '../components/EventCategory.vue'
@@ -31,7 +39,9 @@ export default {
          Carousel,
          EventCard,
          EventCategory,
-         Footer
+         CartOpenIcon,
+         CartContent,
+         Footer,
     },
     setup(){
         
@@ -47,10 +57,13 @@ export default {
             
         })
 
+        const showCartContent = computed(()=>store.getters.showCartContent)
+
         
         return{
             productData,
-            recentEventArray
+            recentEventArray,
+            showCartContent
         }
     }
 }

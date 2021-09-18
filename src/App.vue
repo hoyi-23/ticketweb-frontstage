@@ -1,11 +1,13 @@
 <template>
   <div class="app">
+    <!--bar-->
     <div class="alert alert-secondary alert-dismissible fade show mb-0 py-1 px-2 d-flex align-items-center justify-content-between" role="alert">
       <p class="m-0">還不是會員嗎? 馬上加入會員，得到第一手資料
         <a href="#" class="btn-primary p-1 rounded">點我註冊</a>
       </p>
       <button type="button" class="btn-close p-0 position-relative" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
+    <!--nav-->
     <nav class="navbar navbar-expand-lg navbar-light bg-white">
       <div class="container-fluid d-flex justify-content-between">
         <!--index(Home)-->
@@ -45,8 +47,9 @@
     <div v-else>
       <OnLoad></OnLoad>
     </div>
+    
+    
   </div>
-  
 </template>
 
 <script>
@@ -56,7 +59,7 @@ import {useStore} from 'vuex'
 
 export default({
   components:{
-    OnLoad
+    OnLoad,
   },
   setup() {
     const store = useStore();
@@ -66,6 +69,8 @@ export default({
 
     const checkProductLoaded = computed(()=>store.getters.productLoaded)
     const productData = computed(()=>store.getters.productData)
+
+    
 
     return{
       checkProductLoaded,

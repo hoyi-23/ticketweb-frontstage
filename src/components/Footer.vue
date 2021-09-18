@@ -29,9 +29,9 @@
                 </div>
             </div>
         </div>
-        <div class="footer_bottom d-flex justify-content-center align-items-center py-3">
-            <h1 class="fs-5 text-primary fw-bold pe-3 m-0">方格子劇場</h1>
-            <span>Hoyi-23 © 2020. All Rights Reserved.</span>
+        <div class="footer_bottom d-flex justify-content-center align-items-center flex-column flex-md-row py-3">
+            <h1 class="fs-5 text-primary fw-bold pe-3 m-0 text-nowrap">方格子劇場</h1>
+            <span class="text-nowrap">Hoyi-23 © 2020. All Rights Reserved.</span>
         </div>
     </div>
 </template>
