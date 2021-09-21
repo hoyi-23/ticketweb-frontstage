@@ -1,8 +1,12 @@
 export default({
     state: {
         cartContent: [],
+        total: 0,
     },
     actions:{
+        getCartContent({commit}){
+            commit('GET_CART_CONTENT')
+        },
         addToCart({commit},payload){
             //payload為商品資料
             commit('ADD_CART_CONTENT',payload)
@@ -13,16 +17,34 @@ export default({
         }
     },
     mutations:{
+        GET_CART_CONTENT(state){
+            if(localStorage.getItem('cartItem') != null){
+                state.cartContent = JSON.parse(localStorage.getItem('cartItem'))
+                state.total = JSON.parse(localStorage.getItem('totalPrice'))
+            }else{
+                return
+            }
+        },
         ADD_CART_CONTENT(state,payload){
             state.cartContent.push(payload)
+            state.total += payload.subTotal
+            localStorage.setItem('cartItem',JSON.stringify(state.cartContent))
+            localStorage.setItem('totalPrice',JSON.stringify(state.total))
         },
         DELETE_CART_CONTENT(state,payload){
-            state.cartContent.splice(payload,1)
+            state.cartContent.splice(payload.index,1)
+            state.total = state.total-payload.subTotal
+            localStorage.setItem('cartItem',JSON.stringify(state.cartContent))
+            localStorage.setItem('totalPrice',JSON.stringify(state.total))
+
         }
     },
     getters:{
         cartContent(state){
             return state.cartContent;
+        },
+        total(state){
+            return state.total;
         }
     }
 })

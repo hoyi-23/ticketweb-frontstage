@@ -18,7 +18,18 @@ const firebaseConfig = {
   appId: "1:1006538887131:web:0b5be84e0e5495e7ca61fe"
 };
 
+const secondaryAppConfig = {
+  apiKey: "AIzaSyB7929OrasCPgrMr8illHb7y8OWp0MaLiE",
+  authDomain: "ticketweb-frontstage.firebaseapp.com",
+  projectId: "ticketweb-frontstage",
+  storageBucket: "ticketweb-frontstage.appspot.com",
+  messagingSenderId: "620354483124",
+  appId: "1:620354483124:web:5eaef9ab0417343c4938e1"
+};
+
 firebase.initializeApp(firebaseConfig)
+firebase.initializeApp(secondaryAppConfig, "secondary");
+
 
 //SVG
 const requireAll = requireContext => requireContext.keys().map(requireContext)

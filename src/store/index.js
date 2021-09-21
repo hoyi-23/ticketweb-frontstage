@@ -2,6 +2,7 @@ import { createStore } from 'vuex'
 import getProduct from './products/getProduct'
 import toggleEl from './toggleElements/toggleEl'
 import cartContent from './products/cartContent'
+import authUser from './authUser/auth-user'
 export default createStore({
   state: {
   },
@@ -13,5 +14,6 @@ export default createStore({
     getProduct,
     toggleEl,
     cartContent,
+    authUser
   }
 })

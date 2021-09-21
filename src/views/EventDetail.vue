@@ -31,7 +31,7 @@
                     </div>
                     
                 </div>
-                <div class="d-block btn addToCart py-2 text-center rounded" @click="addToCart()">
+                <div class="d-block btn addToCart py-2 text-center rounded" @click="addToCart(ticketQuan,eventData)">
                         加入購物車
                 </div>
             </div>
@@ -81,11 +81,11 @@
                 </li>
             </ul>
         </div>
-        <!--購票資訊/場地 先以v-if v-else 來判斷-->
+        <!-- 購票資訊/場地 先以v-if v-else 來判斷-->
         <!--未來若有於後台加上場地管理 可以再更改-->
-        <div class="container py-4">
+        <!-- <div class="container py-4">
             <div v-if="eventData.eventLocation == 'Aroom'">
-                <img src="assets/image/arom/jpg" alt="圓形劇場" class="img"  style="max-height: 500px">
+                <img src="/ticketweb-frontstage/assets/image/arom/jpg" alt="圓形劇場" class="img"  style="max-height: 500px">
                 <h2 class="fs-3">活動地點 : 圓形劇場</h2>
                 <ul>
                     <li>容納人數: 500人</li>
@@ -93,14 +93,14 @@
                 </ul>
             </div>
             <div v-if="eventData.eventLocation == 'Broom'">
-                <img src="assets/image/brom/jpg" alt="室外舞台" class="img"  style="max-height: 500px">
+                <img src="/ticketweb-frontstage/assets/image/brom/jpg" alt="室外舞台" class="img"  style="max-height: 500px">
                 <h2 class="fs-3">活動地點 : 室外舞台</h2>
                 <ul>
                     <li>容納人數: 1000人</li>
                     <li>地址: 台北市 室外區 室外路 11號之B</li>
                 </ul>
             </div>
-        </div>
+        </div>  -->
 
 
         <!--cart-->
@@ -181,12 +181,29 @@ export default {
             }
         }
 
-        function addToCart(){
-            if(ticketQuan.value.full == 0 && ticketQuan.value.student == 0 && ticketQuan.value.discount == 0){
+        function addToCart(a,b){
+            console.log(a.full)
+            if(a.full == 0 && a.student == 0 && a.discount == 0){
                 alert('請選擇票券數量')
                 return
             }else{
-                store.dispatch('addToCart',{eventData,ticketQuan})
+                const addTicket = ref({
+                    title: b.eventTitle,
+                    id: b.eventId,
+                    num: {
+                        full: a.full,
+                        student: a.student,
+                        discount: a.discount
+                    },
+                    subTotal:(b.eventFullPrice*a.full)+(b.eventStudentPrice*a.student)+(b.eventDiscountPrice*a.discount),
+                })
+                 
+                store.dispatch('addToCart',addTicket.value)
+                console.log(addTicket.value)
+                a.full = 0
+                a.student = 0
+                a.discount = 0
+                alert('加入完成')
             }
         }
 

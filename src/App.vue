@@ -3,7 +3,7 @@
     <!--bar-->
     <div class="alert alert-secondary alert-dismissible fade show mb-0 py-1 px-2 d-flex align-items-center justify-content-between" role="alert">
       <p class="m-0">還不是會員嗎? 馬上加入會員，得到第一手資料
-        <a href="#" class="btn-primary p-1 rounded">點我註冊</a>
+        <router-link to="/admin" class="btn-primary p-1 rounded">點我註冊</router-link>
       </p>
       <button type="button" class="btn-close p-0 position-relative" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
