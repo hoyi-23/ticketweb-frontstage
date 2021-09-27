@@ -48,6 +48,6 @@ firebase.auth(firebase.apps[1]).onAuthStateChanged(function(user) {
   if (user) {
     store.dispatch('getCurrentUser')
   }else{
-    return
+    router.replace({name: 'Home'})
   }
 })
