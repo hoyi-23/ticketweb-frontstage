@@ -57,7 +57,8 @@
 <script>
 import Login from '../components/Login.vue'
 import Register from '../components/Register.vue'
-
+import firebase from 'firebase/app';
+import 'firebase/auth';
 import {computed,onBeforeMount} from 'vue'
 import {useStore} from 'vuex'
 export default {
@@ -68,7 +69,7 @@ export default {
     },
     setup(){
         const store = useStore()
-
+        const user = firebase.auth(firebase.apps[1]).currentUser;
         async function logout(){
             
             store.dispatch('logout')
@@ -79,6 +80,7 @@ export default {
             
         })
         return{
+            user,
             logout
         }
     }
