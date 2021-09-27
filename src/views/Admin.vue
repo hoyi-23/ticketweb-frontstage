@@ -21,9 +21,35 @@
         </div>
 
         <!--v-if已登入，顯示內容-->
-        <div v-if="user != null">
-            {{userName}}
-            <button @click="logout()">Logout</button>
+        <div class="container" v-else>
+            <div class="d-flex justify-content-between">
+                <div class="d-flex">
+                    <router-link :to="{name: 'UserInfo'}" class="btn btn-outline-primary me-3">修改會員資料</router-link>
+                    <router-link :to="{name: 'MyTicket'}" class="btn btn-outline-primary">查看票券</router-link>
+                </div>
+                <!-- Button trigger modal 確認是否要登出-->
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                    登出
+                </button>
+            </div>
+            <router-view/>
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body text-center">
+                            登出後，尚未完成結帳之商品將被清除!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">保持登入</button>
+                            <button type="button" class="btn btn-primary" data-bs-dismiss="modal" @click="logout()">確認登出</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -42,18 +68,17 @@ export default {
     },
     setup(){
         const store = useStore()
-        const user = computed(()=>store.getters.user)
-        const userName = computed(()=>store.getters.userName)
 
-        function logout(){
+        async function logout(){
+            
             store.dispatch('logout')
+            store.dispatch('clearCart')
         }
         onBeforeMount(()=>{
             store.dispatch('getCurrentUser')
+            
         })
         return{
-            user,
-            userName,
             logout
         }
     }

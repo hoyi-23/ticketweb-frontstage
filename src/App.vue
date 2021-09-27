@@ -33,7 +33,7 @@
             <li class="nav-item">
               <router-link to="/admin" class="nav-link d-flex flex-column align-items-center">
                 <span class="material-icons-outlined fs-4">confirmation_number</span>
-                <p class="fs-6">我的票券</p>
+                <p class="fs-6">會員中心</p>
                 
               </router-link>
             </li>

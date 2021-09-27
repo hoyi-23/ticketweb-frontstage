@@ -14,6 +14,9 @@ export default({
         deleteFromCart({commit},payload){
             //payload為在cartContent中的索引位置
             commit('DELETE_CART_CONTENT',payload)
+        },
+        clearCart({commit}){
+            commit('CLEAR_CART')
         }
     },
     mutations:{
@@ -36,6 +39,13 @@ export default({
             state.total = state.total-payload.subTotal
             localStorage.setItem('cartItem',JSON.stringify(state.cartContent))
             localStorage.setItem('totalPrice',JSON.stringify(state.total))
+
+        },
+        CLEAR_CART(state){
+            state.cartContent = []
+            state.total = 0
+            localStorage.clear('cartItem')
+            localStorage.clear('totalPrice')
 
         }
     },

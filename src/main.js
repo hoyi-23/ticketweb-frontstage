@@ -42,3 +42,12 @@ import SvgIcon from "@/components/SvgIcon"
 
 
 createApp(App).component("icon", SvgIcon).use(store).use(router).mount('#app')
+
+//當authState改變，判斷是否為user，來移動路徑
+firebase.auth(firebase.apps[1]).onAuthStateChanged(function(user) {
+  if (user) {
+    store.dispatch('getCurrentUser')
+  }else{
+    return
+  }
+})

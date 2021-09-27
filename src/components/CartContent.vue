@@ -16,9 +16,9 @@
                         <h2 class="fs-5 text-white text-nowrap text-center border-bottom border-1 pb-2">{{item.title}}</h2>
                         <div class="align-items-center justify-content-evenly d-flex">
                             <div class="d-flex flex-column">
-                                <p class="m-0 text-white">全票 X {{item.num.full}} 張</p>
-                                <p class="m-0 text-white">學生票 X {{item.num.student}} 張</p>
-                                <p class="m-0 text-white">優待票 X {{item.num.discount}} 張</p>
+                                <p v-if="item.num.full>0" class="m-0 text-white">全票 X {{item.num.full}} 張</p>
+                                <p v-if="item.num.student>0" class="m-0 text-white">學生票 X {{item.num.student}} 張</p>
+                                <p v-if="item.num.discount>0" class="m-0 text-white">優待票 X {{item.num.discount}} 張</p>
                             </div>
                             <p class="m-0 text-white">小計: {{item.subTotal}}</p>
                             <a href="#" @click.prevent="deleteFromCart(index,item.subTotal)"><span class="fs-1 material-icons-outlined text-white">delete_forever</span></a>
@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="cart__footer d-flex flex-column pt-2">
-            <router-link to="/checkout" class="btn btn-secondary rounded">結帳去</router-link>
+            <router-link to="/checkout" @click="checkout()" class="btn btn-secondary rounded">結帳去</router-link>
 
             <!--當購物車內容為空時-->
             <div class="cart__recommand d-flex flex-column mt-3" v-if="cartContent.length <= 0">
@@ -56,6 +56,7 @@
 <script>
 import {computed,onBeforeMount} from 'vue'
 import {useStore} from 'vuex'
+
 export default {
     name: 'CartContent',
     setup(){
@@ -82,6 +83,7 @@ export default {
         onBeforeMount(()=>{
             store.dispatch('getCartContent')
         })
+
 
         return{
             cartContent,

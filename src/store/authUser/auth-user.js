@@ -1,5 +1,6 @@
 import firebase from 'firebase/app';
 import 'firebase/auth';
+import 'firebase/firestore'
 
 export default({
     state:{
@@ -39,7 +40,7 @@ export default({
         logout({commit}){
             firebase.auth(firebase.apps[1]).signOut()
             commit('setUser',null)
-        }
+        },
     },
     mutations:{
         setUser(state,payload){

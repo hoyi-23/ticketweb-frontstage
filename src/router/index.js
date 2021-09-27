@@ -16,6 +16,19 @@ const routes = [
     path: '/admin',
     name: 'Admin',
     component: () => import('../views/Admin.vue'),
+    children:[
+      {
+        path: '',
+        name: 'UserInfo',
+        component: ()=>import('../views/UserInfo'),
+        alias: 'userinfo'
+      },
+      {
+        path: 'myticket',
+        name: 'MyTicket',
+        component: ()=>import('../views/MyTicket')
+      }
+    ]
   },
   {
     path: '/checkout',
@@ -24,7 +37,7 @@ const routes = [
     meta: { requiresAuth: true },
     //若尚未註冊登入 導回admin登入頁面
     beforeEnter: (to) => {
-      const user = firebase.auth(firebase.apps[1]).currentUser;
+      const user = localStorage.getItem('user')
       if(!user){
         alert('請先登入會員')
         return{
