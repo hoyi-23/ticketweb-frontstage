@@ -49,9 +49,9 @@ Demo: [方格子劇場](https://hoyi-23.github.io/ticketweb-frontstage/#/)
     我的想法是一個一個篩選下來，先依照類別過濾，再依輸入框過濾，再判斷排序方式。
     若有篩選就會改變結果，監聽每一項結果的改變，就可以做到多個條件的篩選
 
-3. loading 效果製作
-
-
+3. firebase updatePhoneNumber
+    研究中
+    
 ## Project setup
 ```
 npm install

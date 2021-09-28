@@ -30,7 +30,7 @@
             </div>
         </div>
         <div class="cart__footer d-flex flex-column pt-2">
-            <router-link to="/checkout" @click="checkout()" class="btn btn-secondary rounded">結帳去</router-link>
+            <router-link to="/checkout" class="btn btn-secondary rounded">結帳去</router-link>
 
             <!--當購物車內容為空時-->
             <div class="cart__recommand d-flex flex-column mt-3" v-if="cartContent.length <= 0">

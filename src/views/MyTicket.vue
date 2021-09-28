@@ -49,8 +49,12 @@
                                 {{item.total}}
                             </td>
                             <td>
-                                <p class="text-danger" v-if="!item.orderStatus">請於入場前至各大超商付款取票</p>
-                                <p v-else>入場序號{{item.docId}}</p>
+                                <p class="text-danger" v-if="!item.orderStatus">
+                                    請於入場前至各大超商付款取票
+                                    <br>
+                                    <span class="text-dark">票券編號: {{item.docId}}</span>
+                                </p>
+                                <p v-else>票券編號{{item.docId}}</p>
                             </td>
                         </tr>
                     </tbody>

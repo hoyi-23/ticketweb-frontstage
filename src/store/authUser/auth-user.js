@@ -41,6 +41,9 @@ export default({
             firebase.auth(firebase.apps[1]).signOut()
             commit('setUser',null)
         },
+        resetUserInfo({commit},payload){
+            commit('setUser',payload)
+        }
     },
     mutations:{
         setUser(state,payload){

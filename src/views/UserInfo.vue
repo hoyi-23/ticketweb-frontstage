@@ -38,20 +38,22 @@ export default {
 
         const userInfo = ref({
             name: userData.value.displayName,
-            tele: userData.value.phoneNumber,
+            tel: userData.value.phoneNumber,
             email: userData.value.email
         })
 
         function submitUserInfo(){
             const user = firebase.auth(firebase.apps[1]).currentUser;
+            
             user.updateProfile({
                 displayName: userInfo.value.name,
-                phoneNumber: userInfo.value.tele
             }).then(()=>{
                 alert('更新成功，下次登入結帳時即可直接帶入資料')
             }).catch((error)=>{
                 alert(error)
             })
+
+            store.dispatch('resetUserInfo',user)
         }
 
         return{

@@ -21,14 +21,16 @@ const routes = [
         path: '',
         name: 'UserInfo',
         component: ()=>import('../views/UserInfo'),
-        alias: 'userinfo'
+        alias: 'userinfo',
+        meta: { requiresAuth: true },
       },
       {
         path: 'myticket',
         name: 'MyTicket',
-        component: ()=>import('../views/MyTicket')
+        component: ()=>import('../views/MyTicket'),
+        meta: { requiresAuth: true },
       }
-    ]
+    ],
   },
   {
     path: '/checkout',
@@ -36,12 +38,17 @@ const routes = [
     component: () => import('../views/CheckOut.vue'),
     meta: { requiresAuth: true },
     //若尚未註冊登入 導回admin登入頁面
-    beforeEnter: (to) => {
+    beforeEnter: () => {
       const user = localStorage.getItem('user')
-      if(!user){
+      if(localStorage.getItem('cartItem') == null){
+        alert('尚未加入任何活動')
+        return{
+          path: '/'
+        }
+      }else if(!user){
         alert('請先登入會員')
         return{
-          path: '/admin'
+          path: '/admin',
         }
       }
     },

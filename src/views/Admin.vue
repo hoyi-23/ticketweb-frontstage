@@ -27,10 +27,16 @@
                     <router-link :to="{name: 'UserInfo'}" class="btn btn-outline-primary me-3">修改會員資料</router-link>
                     <router-link :to="{name: 'MyTicket'}" class="btn btn-outline-primary">查看票券</router-link>
                 </div>
-                <!-- Button trigger modal 確認是否要登出-->
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
-                    登出
-                </button>
+                <div>
+                    <button type="button" @click="gotoCheckout()" v-if="cart.length > 0" class="btn btn-secondary me-2">
+                        前往結帳
+                    </button>
+                    <!-- Button trigger modal 確認是否要登出-->
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+                        登出
+                    </button>
+                </div>
+                 
             </div>
             <router-view/>
             <!-- Modal -->
@@ -61,6 +67,7 @@ import firebase from 'firebase/app';
 import 'firebase/auth';
 import {computed,onBeforeMount} from 'vue'
 import {useStore} from 'vuex'
+import {useRouter} from 'vue-router'
 export default {
     name: 'Admin',
     components:{
@@ -68,12 +75,18 @@ export default {
         Register
     },
     setup(){
+        const router = useRouter()
         const store = useStore()
-        const user = firebase.auth(firebase.apps[1]).currentUser;
+        const user = computed(()=>store.getters.user)
+        const cart = computed(()=>store.getters.cartContent)
         async function logout(){
             
             store.dispatch('logout')
             store.dispatch('clearCart')
+        }
+
+        function gotoCheckout(){
+            router.push('/checkout')
         }
         onBeforeMount(()=>{
             store.dispatch('getCurrentUser')
@@ -81,7 +94,9 @@ export default {
         })
         return{
             user,
-            logout
+            logout,
+            cart,
+            gotoCheckout
         }
     }
 }

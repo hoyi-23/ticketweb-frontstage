@@ -16,7 +16,18 @@
                             <th scope="col" class="text-nowrap">刪除</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    <tbody v-if="cartItem.length <= 0">
+                        <tr>
+                            <td colspan="7">哇! 空空如也!<br>再去逛逛吧</td>
+                        </tr>
+                        <tr>
+                            <td colspan="7">
+                                <router-link to="/search" class="btn btn-secondary">探索活動</router-link>
+                            </td>
+                        </tr>    
+                        
+                    </tbody>
+                    <tbody v-else>
                         <tr v-for="(item,index) in cartItem" :key="index">
                             <th scope="row">{{`${index+1}`}}</th>
                             <td class="text-nowrap">{{item.title}}</td>
@@ -180,6 +191,7 @@ export default {
                 purchaseItems: cartItem.value,
                 total: total.value
             })
+            alert('訂單建立成功')
             router.push({
                 path: '/admin/myticket'
             })

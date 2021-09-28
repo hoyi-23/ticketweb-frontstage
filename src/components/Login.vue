@@ -19,10 +19,12 @@
 <script>
 import{ref}from'vue';
 import {useStore} from 'vuex'
+
 export default {
     name: 'Login',
     setup(){
         const store = useStore()
+        
         //與email輸入綁定
         const email = ref("");
         //與password輸入綁定
