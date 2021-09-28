@@ -36,9 +36,9 @@
             <div class="cart__recommand d-flex flex-column mt-3" v-if="cartContent.length <= 0">
                 <p class="fs-5 text-white fw-bold"> 猜你會喜歡 >> </p>
                 <ul class="d-flex flex-column" v-for="item in recommendEventArray.slice(0,3)" :key="item.eventId">
-                    <li class="bg-dark rounded">
+                    <li class="bg-dark rounded" style="overflow: hidden;">
                         <div class="d-flex">
-                            <img :src="item.eventPhotos" :alt="item.eventTitle" class="recommend__img">
+                            <img :src="item.eventPhotos" :alt="item.eventTitle" class="recommend__img" style="max-height:280px;">
                             <div class="recommend__content py-3 px-2">
                                 <h2 class="fs-5 text-white">{{item.eventTitle}}</h2>
                                 <p class="small text-white">{{`${item.eventDescription.substring(0,25)}...`}}</p>
