@@ -29,16 +29,26 @@ Demo: [方格子劇場](https://hoyi-23.github.io/ticketweb-frontstage/#/)
 3. 會員忘記密碼與修改密碼(firebase)
 
 ## 專案預覽
-1. 首頁
-
-2. 分類頁面
-
-3. 會員登入/註冊/會員專區
-
-4. 購物車
-
-5. 結帳流程
-
+### 首頁
+  1. Banner(輪播)/Navbar
+    ![https://i.imgur.com/MQ7iCJK.jpg]
+  2. 近期活動
+    ![https://i.imgur.com/rHUDuEx.jpg]
+### 分類頁面
+  1. 多條件篩選
+    ![https://i.imgur.com/Ssm24vz.png]
+### 會員登入/註冊/會員專區
+  1. 登入註冊
+  2. 會員票券
+  3. 會員資訊
+### 購物車
+  1. 購物車為空時，顯示推薦活動
+    ![https://i.imgur.com/2zBOIfj.jpg]
+  2. 購物車項目
+### 結帳流程
+  1. 購物商品刪除後為空時
+  2. 支付方式為現金
+  3. 支付方式為信用卡 
 ## 主要遇到的困難
 1. SVG hover動畫操作
    正在研究中..
@@ -51,6 +61,9 @@ Demo: [方格子劇場](https://hoyi-23.github.io/ticketweb-frontstage/#/)
 
 3. firebase updatePhoneNumber
     研究中
+
+4. firebase 載入緩慢
+   研究中
     
 ## Project setup
 ```
