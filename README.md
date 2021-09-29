@@ -44,11 +44,23 @@ Demo: [方格子劇場](https://hoyi-23.github.io/ticketweb-frontstage/#/)
 ### 購物車
   1. 購物車為空時，顯示推薦活動
     ![](https://i.imgur.com/2zBOIfj.jpg)
-  2. 購物車項目
+  2. 購物車
+    ![](https://i.imgur.com/zt0qc4R.png)
+### 商品資訊頁面
+    ![](https://i.imgur.com/g52nlYF.png)
 ### 結帳流程
-  1. 購物商品刪除後為空時
-  2. 支付方式為現金
-  3. 支付方式為信用卡 
+  1. 可帶入已設定之用戶資訊(姓名/email)
+    ![](https://i.imgur.com/qshEaFi.png)
+  2. 支付方式為信用卡
+    ![](https://i.imgur.com/1w9FSe9.png)
+### 會員專區
+  1. 登入註冊
+    ![](https://i.imgur.com/6MTjI5u.png)
+  2. 會員資訊
+    ![](https://i.imgur.com/bhBt0IS.png)
+  3. 會員票券
+    ![](https://i.imgur.com/bnAnWU0.png)
+    
 ## 主要遇到的困難
 1. SVG hover動畫操作
    正在研究中..
