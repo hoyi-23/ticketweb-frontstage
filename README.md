@@ -44,7 +44,7 @@ Demo: [方格子劇場](https://hoyi-23.github.io/ticketweb-frontstage/#/)
   2. 購物車
     ![](https://i.imgur.com/zt0qc4R.png)
 ### 商品資訊頁面
-
+  1. 單個商品頁面
     ![](https://i.imgur.com/g52nlYF.png)
 
 ### 結帳流程
