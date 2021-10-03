@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 998 998">
+<title>movieSvgIcon</title>
+<g id="fixed-button">
+<path fill="#333" d="M770,161.77,693.26,0,0,291.09,56.43,426.4q.15,284.43.31,568.86H823.5V411.09l-644-.09Z" transform="translate(0)"/>
+</g>
+<g id="change">
+<path fill="currentColor" class="cls-2" d="M284.83,219.17l-105,43.92L175,365,280.4,320.28Q282.62,269.72,284.83,219.17Z" transform="translate(0)"/>
+<path fill="currentColor" class="cls-2" d="M592.57,189q2.31-50.39,4.6-100.76l-114,47.83q-2.47,50.55-4.94,101.1Z" transform="translate(0)"/>
+<path fill="currentColor" class="cls-2" d="M100.32,455.26l84.05-.23L138,552.91l-37.49,0Z" transform="translate(0)"/>
+<path fill="currentColor" class="cls-2" d="M400.66,455.06l-46.38,97.56,121.87.42q23.28-49,46.57-98Z" transform="translate(0)"/>
+<path fill="currentColor" class="cls-2" d="M737.4,455,690.91,553l88.64-.09-.06-97.68Z" transform="translate(0)"/>
+<path fill="currentColor" class="cls-2" d="M100.57,597l-.12,354.22H779.51l-.15-354.11Z" transform="translate(0)"/>
+</g>
+<g id="fixed-up">
+<path fill="#333" d="M491,761.41l0-44H167.34q0,22,0,43.9Z" transform="translate(0)"/>
+<path fill="#333" d="M167.36,828.69l-.09,44H491q0-22,0-44Z" transform="translate(0)"/>
+</g>
+</svg>

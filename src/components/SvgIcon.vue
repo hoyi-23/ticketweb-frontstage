@@ -1,5 +1,5 @@
 <template>
-    <svg class="svg-icon">
+    <svg class="svg-icon" :class="iconName">
         <use :xlink:href="`#${iconName}`"></use>
     </svg>
 </template>
@@ -22,6 +22,7 @@ export default {
         height: 2.5rem;
         overflow: hidden;
         transition: all .15s ease-in-out;
+        fill: currentColor !important;
         @media (min-width: 1023px){
             width: 4rem;
             height: 4rem;

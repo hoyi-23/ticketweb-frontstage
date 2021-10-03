@@ -61,20 +61,28 @@ Demo: [方格子劇場](https://hoyi-23.github.io/ticketweb-frontstage/#/)
     ![](https://i.imgur.com/bnAnWU0.png)
 
 ## 主要遇到的困難
-1. SVG hover動畫操作
-   正在研究中..
+### SVG hover操作 (解決)
+   我想要做顏色改變，放入SVG後卻發現無法使用animation等等
+   因為我使用svg-sprite-loader，這個套件可以讓我們在引入上簡單很多，完成設定後，只需要使用<icon>寫入檔案名字即可。
+   icon 的顏色是吃父層的 css:color ，想要改變icon 顏色，要把 SVG 檔裡的 fill 或 stroke 改成 currentColor
 
-2. 多條件篩選:
+### 多條件篩選:(解決)
     解決的方式 -> 釐清邏輯
     這次的多條件篩選分別為 關鍵字/排序方式/類別
     我的想法是一個一個篩選下來，先依照類別過濾，再依輸入框過濾，再判斷排序方式。
     若有篩選就會改變結果，監聽每一項結果的改變，就可以做到多個條件的篩選
 
-3. firebase updatePhoneNumber
+### firebase updatePhoneNumber
     研究中
 
-4. firebase 載入緩慢
-   研究中
+### firebase 載入問題
+
+  ```
+  @firebase/firestore: Firestore (8.10.0): Could not reach Cloud Firestore backend. Backend didn't respond within 10 seconds.
+  This typically indicates that your device does not have a healthy Internet connection at the moment. The client will operate in offline mode until it is able to successfully connect to the backend.
+  ```
+  我一直擔心是因為firestore的儲存檔案限制，後來我的後台改用firebase storage來儲存較大的檔案(圖檔)，用這個方法來試試看!
+
     
 ## Project setup
 ```

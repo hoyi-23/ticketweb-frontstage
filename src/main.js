@@ -4,7 +4,7 @@ import { createApp } from 'vue'
 import firebase from 'firebase/app';
 import 'firebase/auth';
 import 'firebase/firestore'
-
+import 'firebase/firebase-storage'
 import App from './App.vue'
 import router from './router'
 import store from './store'
@@ -29,7 +29,7 @@ const secondaryAppConfig = {
 
 firebase.initializeApp(firebaseConfig)
 firebase.initializeApp(secondaryAppConfig, "secondary");
-
+firebase.firestore().settings({experimentalForceLongPolling: true, merge: true })
 
 //SVG
 const requireAll = requireContext => requireContext.keys().map(requireContext)
