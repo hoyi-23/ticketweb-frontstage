@@ -30,7 +30,7 @@ Demo: [方格子劇場](https://hoyi-23.github.io/ticketweb-frontstage/#/)
 
 ## 專案預覽
 ### LOADING
- 1. ![](https://giphy.com/embed/W1cSqj8JKMVKwS5SrO.gif)
+ 1. ![image](https://giphy.com/embed/W1cSqj8JKMVKwS5SrO)
 
 ### 首頁
   1. Banner(輪播)/Navbar
