@@ -29,6 +29,8 @@ Demo: [方格子劇場](https://hoyi-23.github.io/ticketweb-frontstage/#/)
 3. 會員忘記密碼與修改密碼(firebase)
 
 ## 專案預覽
+### LOADING
+ 1. <iframe src="https://giphy.com/embed/W1cSqj8JKMVKwS5SrO" width="480" height="404" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/W1cSqj8JKMVKwS5SrO">via GIPHY</a></p> 
 ### 首頁
   1. Banner(輪播)/Navbar
     ![](https://i.imgur.com/MQ7iCJK.jpg)
@@ -75,13 +77,36 @@ Demo: [方格子劇場](https://hoyi-23.github.io/ticketweb-frontstage/#/)
 ### firebase updatePhoneNumber
     研究中
 
-### firebase 載入問題
+### firebase 載入問題(解決)
 
   ```
   @firebase/firestore: Firestore (8.10.0): Could not reach Cloud Firestore backend. Backend didn't respond within 10 seconds.
   This typically indicates that your device does not have a healthy Internet connection at the moment. The client will operate in offline mode until it is able to successfully connect to the backend.
   ```
-  我一直擔心是因為firestore的儲存檔案限制，後來我的後台改用firebase storage來儲存較大的檔案(圖檔)，用這個方法來試試看!
+  我一直擔心是因為firestore的儲存檔案限制，後來我的後台改用firebase storage來儲存較大的檔案(圖檔)，用這個方法來試試看!(這個狀態就解決了!)
+
+### LOADING樣式製作
+製作4*4個小方塊，分別上下左右移動。
+運用到 CSS transform-3D的透視(perspective)。
+想要讓它看起來立體，需要設定適合的透視(perspective)!
+#### transform的設法
+1. `transform: perspective(xx)`
+其中xx為數字，若數字越大代表離螢幕越遠，數字越小代表離螢幕越近。
+2. `transform-origin` 
+這個是**視點**，這次的實作視點在正上方( x-offset | y-offset)。
+3. `transform-style`
+MDN上解釋:設置元素的子元素是位于 3D 空間中還是平面中。而且必須為所有元素中的子元素都設置，因為這個屬性不會繼承。
+就是有點在告訴瀏覽器我這些都是要3D的!
+#### 小方塊的設法
+1. 首先我將所有的都使用`position: absolute`設置在左上方。
+2. 將所有小方塊的大小都設置為w:25%、h:25%；並且設置他們的最初始顏色
+3. 設定等等會需要的animation
+animation: 動畫持續四秒 cubic-bezier(.38,.04,.38,.99) 無限循環
+transform: 可以先設置看看，等等開始動畫後會`translateZ(200)`也就是垂直來看，它會上升到多少/rotate的部分，為了讓它不要太單調，所以加入rotate看起來有點左右移動。(之後會使用animation的keyframe來決定怎麼跑)
+4. 調整每個小方塊的位置(左右位置分別要調整2,3,4col，上下位置分別要調整row，就是個加上25%)
+5. 為了要有波浪效果，不能就全部一起執行動畫，需要控制`animation-delay`，我是以右上到左下的對角線當作同一個浪峰，然後由左上到右下前進。
+6. 接下來就是整個動畫中的keyframe設置。如果沒設置動畫是不會動的! 
+主要動作就是: 上下: 上升200px然後回到0px。 左右: rotate(X,Y,Z)分別在20度、10度、10度間轉換
 
     
 ## Project setup
